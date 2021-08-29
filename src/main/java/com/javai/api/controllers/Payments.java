@@ -1,8 +1,8 @@
 package com.javai.api.controllers;
 
-import com.javai.api.dto.TedDto;
+import com.javai.api.requests.PixMapper;
+import com.javai.api.requests.TedDto;
 import com.javai.api.services.PaymentsService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -23,10 +23,9 @@ public class Payments {
 
     @PostMapping("/pix/{id}")
     public String pix(@PathVariable @Size(min = 10, max = 10) String id) {
-        // [0-1] números do id identificam quem está pagando
-        // [2-3] números identificam quem está recebendo
-        // [6-9] números identificam o valor da operação
-        return paymentsService.dumbMethod();
+        PixMapper pixMapper = new PixMapper(id);
+
+        return "Qualquer coisa do gênero";
     }
 
     @PostMapping("/boleto")

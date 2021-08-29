@@ -1,4 +1,4 @@
-package com.javai.api.dto;
+package com.javai.api.requests;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
